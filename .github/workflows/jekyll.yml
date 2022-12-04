@@ -43,6 +43,10 @@ jobs:
         uses: actions/configure-pages@v2
       - name: Install Jekyll
         run: gem install jekyll bundler
+      - name: Install bundles
+        run: bundle install
+      - name: Update bundles
+        run: bundle update
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
